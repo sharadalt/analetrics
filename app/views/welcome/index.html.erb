@@ -1,2 +1,22 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+
+<br>
+
+
+<% content_for :top_content do %>
+<h2>Blocmetrics</h2>
+  <div class="jumbotron">
+    <div class="container">
+      <div class="boxed border-medium">
+        <h3>Build an analytics service to track events on websites</h3>
+            <h3>
+              <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary btn-md' %>
+            </h3>
+      </div>
+      <section class="border-medium"> 
+        Register Applications to track their events. View the events on registerd applications<br>
+        <%= link_to "Get Going", welcome_index_path, class: 'btn btn-primary btn-sm' %>
+      </section>
+    </div>
+  </div>
+<% end %>
+</br>
