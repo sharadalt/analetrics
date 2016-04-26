@@ -1,0 +1,28 @@
+<h1>Edit RegisteredApplication </h1>
+<div class = "row">
+   <div class = "col-md-8">
+      <%= form_for [@user,@registered_application] do |f| %>
+         <% if @registered_application.errors.any? %>
+            <div class="alert alert-danger">
+               <h4><%= pluralize(registered_application.errors.count, "error") %>.</h4>
+               <ul>
+                  <% registered_application.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                  <% end %>
+               </ul>
+            </div>
+         <% end %>
+         <%= form_group_tag(@registered_application.errors[:title]) do %>
+           <%= f.label :name %>
+           <%= f.text_field :name, class: 'form-control', placeholder: "Enter Application name" %>
+         <% end %>
+         <%= form_group_tag(@registered_application.errors[:url]) do %>
+            <%= f.label :url %>
+            <%= f.text_field :url, rows: 8, class: 'form-control', placeholder: "Enter Application url" %>
+         <% end %>
+        <div class="form-group">
+           <%= f.submit "Save", class: 'btn btn-success' %>
+        </div>
+      <% end %>
+   </div>
+</div>

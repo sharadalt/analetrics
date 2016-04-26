@@ -16,3 +16,19 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import 'bootstrap/theme';
+
+.user-info {
+   margin-top: 9px;
+ }
+ 
+.nav {
+   margin-top: 5px;
+ }
+ 
+.alert-alert {
+  @extend .alert-warning;
+}
+
+.alert-notice {
+  @extend .alert-info;
+}

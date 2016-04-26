@@ -5,3 +5,35 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'random_data'
+
+User.destroy_all
+
+for i in 1..5
+  user = User.create!(
+  name: "user#{i}",
+  email: "user#{i}@example.com",
+  password: "hello123", 
+  password_confirmation: "hello123"
+  )
+  user.skip_confirmation!
+  user.save
+end
+
+
+users = User.all
+
+#Create Wikis
+10.times do
+    RegisteredApplication.create!(
+        name:  RandomData.random_sentence,
+        url:   RandomData.random_sentence,
+        user: users.sample
+)
+end
+
+registered_applications = RegisteredApplication.all
+
+puts "Seed finished"
+puts "#{RegisteredApplication.count} Applications created"
+puts "#{User.count} Users created"
