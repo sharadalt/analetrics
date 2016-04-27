@@ -17,13 +17,16 @@ for i in 1..5
   password_confirmation: "hello123"
   )
   user.skip_confirmation!
+  if i == 2
+    user.role = 'admin'
+  end
   user.save
 end
 
 
 users = User.all
 
-#Create Wikis
+#Create Registered Applications
 10.times do
     RegisteredApplication.create!(
         name:  RandomData.random_sentence,
