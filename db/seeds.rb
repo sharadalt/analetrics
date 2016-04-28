@@ -23,7 +23,7 @@ end
 
 users = User.all
 
-#Create Wikis
+#Create Registered Applications
 10.times do
     RegisteredApplication.create!(
         name:  RandomData.random_sentence,

@@ -1,4 +1,7 @@
 class RegisteredApplicationsController < ApplicationController
+  
+  before_action :authenticate_user!
+  
   def index
     @user = current_user
     @registered_applications = @user.registered_applications
@@ -36,12 +39,14 @@ class RegisteredApplicationsController < ApplicationController
   end
 
   def edit
-    @registered_applications = RegisteredApplication.all
-    @registered_application = RegisteredApplication.find(params[:id])
+    @user = current_user
+    @registered_applications = @user.registered_applications
+    @registered_application  = @registered_applications.find(params[:id])
   end
   
-   def update
-    @registered_applications = RegisteredApplication.all
+  def update
+    @user = current_user
+    @registered_applications = @user.registered_applications
     @registered_application = @registered_applications.find(params[:id])
     @registered_application.name = params[:registered_application][:name]
     @registered_application.url  = params[:registered_application][:url]
