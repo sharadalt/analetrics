@@ -5,4 +5,6 @@ class RegisteredApplication < ActiveRecord::Base
   
   validates_presence_of :name
   validates_presence_of :url
+  
+  has_many :events, :dependent => :destroy
 end

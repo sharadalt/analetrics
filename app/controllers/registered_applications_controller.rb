@@ -12,6 +12,7 @@ class RegisteredApplicationsController < ApplicationController
     @user = current_user
     @registered_applications = @user.registered_applications
     @registered_application  = @registered_applications.find(params[:id])
+    @events = @registered_application.events.group_by(&:name)
   end
 
   def new

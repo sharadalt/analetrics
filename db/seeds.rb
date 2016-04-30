@@ -6,6 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'random_data'
+require 'rubygems'
+require 'faker'
 
 User.destroy_all
 
@@ -20,11 +22,10 @@ for i in 1..5
   user.save
 end
 
-
 users = User.all
 
 #Create Registered Applications
-10.times do
+40.times do
     RegisteredApplication.create!(
         name:  RandomData.random_sentence,
         url:   RandomData.random_sentence,
@@ -34,6 +35,16 @@ end
 
 registered_applications = RegisteredApplication.all
 
+100.times do
+  user = Event.create!(
+    name: Faker::Name.name,
+    registered_application: registered_applications.sample
+)
+end
+
+events = Event.all
+
 puts "Seed finished"
 puts "#{RegisteredApplication.count} Applications created"
+puts "#{Event.count} Events created"
 puts "#{User.count} Users created"
