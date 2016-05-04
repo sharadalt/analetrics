@@ -36,9 +36,9 @@ end
 registered_applications = RegisteredApplication.all
 
 100.times do
-  user = Event.create!(
-    name: Faker::Name.name,
-    registered_application: registered_applications.sample
+    Event.create!(
+      name: Faker::Name.name,
+      registered_application: registered_applications.sample
 )
 end
 

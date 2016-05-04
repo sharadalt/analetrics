@@ -18,7 +18,7 @@ class RegisteredApplicationsController < ApplicationController
   def new
     @user = current_user
     @registered_applications = @user.registered_applications
-    @registered_application = RegisteredApplication.new
+    @registered_application = @registered_applications.new
     @registered_application.user = @user
   end
 
