@@ -1,7 +1,7 @@
 <h1>Edit RegisteredApplication </h1>
 <div class = "row">
    <div class = "col-md-8">
-      <%= form_for [@user,@registered_application] do |f| %>
+      <%= form_for @registered_application do |f| %>
          <% if @registered_application.errors.any? %>
             <div class="alert alert-danger">
                <h4><%= pluralize(registered_application.errors.count, "error") %>.</h4>

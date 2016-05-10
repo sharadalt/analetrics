@@ -3,9 +3,9 @@
     <div class = "col-md-8">
        <%= @registered_application.name %>
        <%= @registered_application.url %>
-       <% @events.each do |event| %>
-         <h5> Event_type = <%= event[0] %> </h5>
-         <h5> Event_type_count = <%= @events.count(event) %> </h5>
+       <% @events.each do |(name, events_with_name)| %>
+         <h5>Event name = <%= name %> </h5>
+         <h5>Occurrences of <%= name %> = <%= events_with_name.size %> </h5>
        <% end %>
    </div>
   </div>

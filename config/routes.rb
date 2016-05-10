@@ -6,6 +6,14 @@ Rails.application.routes.draw do
   
   get 'welcome/about'
   
+  namespace :api, defaults: { format: :json } do
+    
+    match '/events', to: 'events#preflight', via: [:options]
+    resources :events, only: [:create]
+    
+  end
+  
+  
   root 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
