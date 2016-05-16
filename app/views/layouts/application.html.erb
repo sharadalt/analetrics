@@ -12,6 +12,7 @@
     <div class="container">
       <div id="navbar">
         <ul class="nav navbar-nav pull-right">
+          <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
           <% if user_signed_in? %>
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -25,6 +26,7 @@
           <% else %>
             <%= link_to 'Sign In', new_user_session_path,  class: 'btn btn-primary btn-md' %>
           <% end %>
+          
         </ul>
       </div>
     </div>

@@ -7,6 +7,8 @@
          <h5>Event name = <%= name %> </h5>
          <h5>Occurrences of <%= name %> = <%= events_with_name.size %> </h5>
        <% end %>
+       <%= pie_chart @registered_application.events.group(:name).count %>
+       <%= line_chart @registered_application.events.group_by_day(:created_at).count %>
    </div>
   </div>
 </div>
