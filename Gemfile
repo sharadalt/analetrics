@@ -43,3 +43,4 @@ group :development, :test do
  gem 'redcarpet'
  gem 'simple_form'
  gem 'chartkick'
+ gem 'groupdate'
