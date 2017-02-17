@@ -8,6 +8,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="jumbotron">
   <nav class="navbar navbar">
     <div class="container">
       <div id="navbar">
@@ -31,7 +32,7 @@
   </nav>
 
    <%#= yield %>
-</body>
+ 
 
 <%#= debug(flash) %>
 <div class="container">
@@ -48,5 +49,6 @@
     <h1><%= yield :header %></h1>
   <%= yield %>
 </div>
-
+</div>
+</body>
 </html>
