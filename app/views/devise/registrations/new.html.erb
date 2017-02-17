@@ -1,4 +1,6 @@
-<% header "Sign Up" %>
+<div style="width:600px; height:500px; margin-left:150px;background-color:#708090; border: 3px solid #191970; color:white">
+
+<h2>Sign Up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -30,3 +32,4 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>

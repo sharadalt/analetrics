@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html>
-<body>
 <ul class="nav navbar-nav pull-left">
-
+  
+<div style="width:800px; height:600px; margin-left:150px;background-color:#708090; border: 3px solid #191970; color:white">
 <h4>My RegisteredApplications</h4>
-<table style="width:50%">
+<table style="width:50%; color:white; border: 5px solid black">
   <tr>
     <th>RegisteredApplication(click RegisteredApplication link below to edit) </th>
     <th>RegisteredApplication(click link to show) </th>
@@ -12,9 +10,9 @@
   </tr>
   <% @registered_applications.each do |regapp| %>
     <tr>
-          <td><%= link_to regapp.name, edit_registered_application_path(regapp), class: 'btn btn-link btn-md' %></td>
-          <td><%= link_to "show", [regapp], method: :get, class: 'btn btn-link btn-md' %></td>
-          <td><%= link_to "delete", [regapp], method: :delete, class: 'btn btn-warning btn-md' %></td>
+          <td><%= link_to regapp.name, edit_registered_application_path(regapp), class: 'btn btn-link btn-md', :style=>'color: white;' %></td>
+          <td><%= link_to "show", [regapp], method: :get, class: 'btn btn-link btn-md',:style=>'color: white;' %></td>
+          <td><%= link_to "delete", [regapp], method: :delete, class: 'btn btn-warning btn-md',:style=>'color: white;' %></td>
     </tr>
   <% end %>
 </table>
@@ -24,6 +22,6 @@
     <%= render partial: 'form', locals: {registered_application: @registered_application} %>
   </div>
 </div>
+</div>
 </ul>
-</body>
-</html>
+
