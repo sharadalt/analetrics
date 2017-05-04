@@ -9,7 +9,9 @@ Blocmetrics analytics service will offer a few key features:
  </p>
 
 <h2>Use Case </h2>
- For the use case, goto the link, https://sharadalt.github.io/portfolio/blocmetrics
+
+ For the use case, goto the link,https://sharadalt.github.io/portfolio/blokmetrics
+ 
  
 <h2>Configuration</h2>
 <div class="boxed" style="width:50%;text-align: center;">
