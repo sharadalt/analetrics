@@ -10,7 +10,7 @@ Blocmetrics analytics service will offer a few key features:
 
 <h2>Use Case </h2>
 
- For the use case, goto the link,https://sharadalt.github.io/portfolio/blokmetrics
+ For the use case, goto the link,  https://sharadalt.github.io/portfolio/blokmetrics
  
  
 <h2>Configuration</h2>
