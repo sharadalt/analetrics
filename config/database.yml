@@ -14,20 +14,10 @@
 # Configure Using Gemfile
 # gem 'pg'
 #
-default: &default
-  adapter: postgresql
-  encoding: unicode
+
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: 5
-  template: template0
-  username: ubuntu
-  password:
-
-development:
-  <<: *default
-  database: workspace_development
-
+ 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
@@ -58,9 +48,7 @@ development:
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-test:
-  <<: *default
-  database: workspace_test
+
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -81,8 +69,25 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+
+
+default: &default
+      adapter: postgresql
+      encoding: unicode
+      database: postgres
+      pool: 5
+      username: postgres
+      password: postgres
+      host:     <%= ENV['IP'] %>
+
+development:
+   <<: *default
+   
+test: &test
+   <<: *default
+   
 production:
-  <<: *default
-  database: workspace_production
-  username: workspace
-  password: <%= ENV['WORKSPACE_DATABASE_PASSWORD'] %>
+   <<: *default
+   
+
+

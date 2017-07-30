@@ -1,7 +1,7 @@
-<h1>Blocmetrics</h1>
+<h1>Analetrics</h1>
 There are plenty of good analytic services, but that doesn't mean you can't build a better one. 
 
-Blocmetrics analytics service will offer a few key features:
+Analetrics analytics service will offer a few key features:
 <p>
     A client-side JavaScript snippet that allows a user to track events on their website.
     A server-side API that captures and saves those events to a database.

@@ -1,6 +1,7 @@
 
-<div style="width:650px; height:350px; margin-left:150px;background-color:#708090; border: 1px solid #191970; color:white">
-
+<div style="width:650px; height:500px; margin-left:150px;background-color:#708090; border: 1px solid #191970; color:white">
+<%= render "devise/shared/project_name"%>
+<%= render "devise/shared/logged_in", style:'color:white;' %>
 <div class="row">
   <div class="col-md-8">
     <div class = "col-md-8">
@@ -9,9 +10,11 @@
        <% @events.each do |(name, events_with_name)| %>
          <h5>Event name = <%= name %> </h5>
          <h5>Occurrences of <%= name %> = <%= events_with_name.size %> </h5>
+         <%#= pie_chart @registered_application.events.group(:name).count, style:'width:400px;height:400px;'%>
+         <%= line_chart @registered_application.events.group_by_day(:created_at).count %>
        <% end %>
-       <%= pie_chart @registered_application.events.group(:name).count %>
-       <%= line_chart @registered_application.events.group_by_day(:created_at).count %>
+  
+  
    </div>
   </div>
 </div>

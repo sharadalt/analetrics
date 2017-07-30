@@ -3,20 +3,23 @@
 
 
 <% content_for :top_content do %>
+   <div class="container-fluid text-center">
     <div class="boxed">
-      <div style="width:760px; height:60px;">
-        <h4 style="text-align:left;color:white;">&nbsp;&nbsp;Blocmetrics:</h4> <br>
-      </div>
-      <div style="width:400px; height:200px;float:center;">
-        <h1>Blocmetrics:</h1>
-        <p>An analytics service to track events on websites</p>
-         <p>
+      <%= render "devise/shared/project_name"%>
+      <%= link_to "About", welcome_about_path, style:'color:white;float:left;background-color:black;',class: 'btn btn-primary btn-md'%>
+      <%= render "devise/shared/logged_in", style:'color:white;' %>
+      <div style="width:400px; height:200px;">
+        <h1 style="margin-left:130px;">Analetrics:</h1>
+        <p style="margin-left:130px;">An analytics service to track events on websites</p>
+         <p style="margin-left:130px;">
            <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary btn-md' %>
+           <%= link_to 'Sign In', new_user_session_path,  class: 'btn btn-primary btn-md' %>
+           <%= link_to 'Start Now', welcome_index_path, class: 'btn btn-primary btn-md' %>
          </p>
        </div>
        <br>
-      <div style="width:600px; height:150px; margin-left:150px;background-color:#87CEFA; border: 1px solid #191970; color:black">
-        <table style="width: 100%; border: 5px solid #191970; border-collapse: collapse; text-align:left">
+      <div style="width:600px; height:150px; margin-left:130px;background-color:#87CEFA; color:black">
+        <table style="width: 100%;   text-align:left">
           <tr>
             <th>Edit_Application</th>
             <th>Show_Application</th>
@@ -31,9 +34,10 @@
       </div>
       <br><br>
        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Register Applications to track their events. View the events on registerd applications<br><br>
-       <%= link_to "Get Going", registered_applications_path, class: 'btn btn-primary btn-sm' %>
+       <%#= link_to "Start Now", registered_applications_path, class: 'btn btn-primary btn-sm' %>
        <br>
     </div>
+  </div>
 <% end %>
-<script>blocmetrics.report("Event_for Blocmetrics");</script>
+<script>blocmetrics.report("Event_for Analetrics");</script>
 </br>

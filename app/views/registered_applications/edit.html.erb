@@ -1,5 +1,7 @@
-<div style="width:650px; height:350px; margin-left:150px;background-color:#708090; border: 1px solid #191970; color:black">
-<h3>Edit RegisteredApplication </h3>
+<div style="width:650px; height:350px;background-color:#708090; border: 1px solid #191970; color:black">
+<%= render "devise/shared/project_name"%>
+<%= render "devise/shared/logged_in", style:'color:white;' %>
+<h3 style="color:#FFFAF0; margin-left:-145px;">Edit RegisteredApplication </h3>
 <div class = "row">
    <div class = "col-md-8">
       <%= form_for @registered_application do |f| %>
@@ -14,15 +16,15 @@
             </div>
          <% end %>
          <%= form_group_tag(@registered_application.errors[:title]) do %>
-           <%= f.label :name %>
-           <%= f.text_field :name, class: 'form-control', placeholder: "Enter Application name" %>
+           <%= f.label :name, style:'color:#FFFAF0;margin-left:40px;' %>
+           <%= f.text_field :name, class: 'form-control',style:'margin-left:40px;',  placeholder: "Enter Application name" %>
          <% end %>
          <%= form_group_tag(@registered_application.errors[:url]) do %>
-            <%= f.label :url %>
-            <%= f.text_field :url, rows: 8, class: 'form-control', placeholder: "Enter Application url" %>
+            <%= f.label :url, style:'color:#FFFAF0;margin-left:40px;' %>
+            <%= f.text_field :url, rows: 8, class: 'form-control',style:'margin-left:40px;', placeholder: "Enter Application url" %>
          <% end %>
         <div class="form-group">
-           <%= f.submit "Save", class: 'btn btn-success' %>
+           <%= f.submit "Save", class: 'btn btn-primary',style:'margin-left:40px; background-color:blue;' %>
         </div>
       <% end %>
    </div>

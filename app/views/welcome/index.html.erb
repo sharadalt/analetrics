@@ -3,19 +3,15 @@
 
 
 <% content_for :top_content do %>
-<h2>Blocmetrics</h2>
+
   <div class="jumbotron">
     <div class="container">
-      <div class="boxed border-medium">
+      <div class="boxed"">
+        <h2 style="margin-top:230px;">Analetrics</h2>
         <h3>Build an analytics service to track events on websites</h3>
-            <h3>
-              <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary btn-md' %>
-            </h3>
+          Register Applications to track their events. View the events on registerd applications<br>
+        <%= link_to "Start", registered_applications_path, class: 'btn btn-primary btn-lg', style:'margin-top:30px;' %>
       </div>
-      <section class="border-medium"> 
-        Register Applications to track their events. View the events on registerd applications<br>
-        <%= link_to "Get Going", registered_applications_path, class: 'btn btn-primary btn-sm' %>
-      </section>
     </div>
   </div>
 <% end %>
